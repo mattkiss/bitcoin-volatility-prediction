@@ -102,33 +102,33 @@ Y_pred_mean=np.array(Y_pred_mean)
 
 # Display parameters
 
-print("Parameters\n----------")
-print(numOfRendements, "returns are used to compute a proxy")
-print(numOfColumnsX, "is the size of a sample (with the intercept)")
-print(timeBetweenPrices, "seconds is the interval used to linearly interpolate prices")
-print(len(proxies), "proxies have been computed and used")
-print(len(X_train), "is the size of the training and testing test\n")
+print "Parameters\n----------"
+print numOfRendements, "returns are used to compute a proxy"
+print numOfColumnsX, "is the size of a sample (with the intercept)"
+print timeBetweenPrices, "seconds is the interval used to linearly interpolate prices"
+print len(proxies), "proxies have been computed and used"
+print len(X_train), "is the size of the training and testing test\n"
 
 # Display coefficients
 
-print("Coefficients\n------------")
-print("Linear regression", regr.coef_)
-print("RLS              ", beta.T, "\n")
+print "Coefficients\n------------"
+print "Linear regression", regr.coef_
+print "RLS              ", beta.T, "\n"
 
 # Linear model prediction
 
-print("Linear regression quality\n-------------------------")
+print "Linear regression quality\n-------------------------"
 Y_pred=regr.predict(X_test)
-print("Mean squared error: %.10f" % mean_squared_error(Y_test, Y_pred))
-print("Normalized mean squared error (last): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred),mean_squared_error(Y_test, Y_pred_last)))
-print("Normalized mean squared error (mean): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred),mean_squared_error(Y_test, Y_pred_mean)))
-print("Coefficient of determination: %.10f" % r2_score(Y_test, Y_pred), "\n")
+print "Mean squared error: %.10f" % mean_squared_error(Y_test, Y_pred)
+print "Normalized mean squared error (last): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred),mean_squared_error(Y_test, Y_pred_last))
+print "Normalized mean squared error (mean): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred),mean_squared_error(Y_test, Y_pred_mean))
+print "Coefficient of determination: %.10f" % r2_score(Y_test, Y_pred), "\n"
 
 # RLS algorithm prediction
 
-print("RLS quality\n-----------")
+print "RLS quality\n-----------"
 Y_pred_RLS=X_test.dot(beta)
-print("Mean squared error: %.10f" % mean_squared_error(Y_test, Y_pred_RLS))
-print("Normalized mean squared error (last): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred_RLS),mean_squared_error(Y_test, Y_pred_last)))
-print("Normalized mean squared error (mean): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred_RLS),mean_squared_error(Y_test, Y_pred_mean)))
-print("Coefficient of determination: %.10f" % r2_score(Y_test, Y_pred_RLS))
+print "Mean squared error: %.10f" % mean_squared_error(Y_test, Y_pred_RLS)
+print "Normalized mean squared error (last): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred_RLS),mean_squared_error(Y_test, Y_pred_last))
+print "Normalized mean squared error (mean): %.10f" % np.divide(mean_squared_error(Y_test, Y_pred_RLS),mean_squared_error(Y_test, Y_pred_mean))
+print "Coefficient of determination: %.10f" % r2_score(Y_test, Y_pred_RLS)

@@ -70,9 +70,10 @@ RUN chmod +x /usr/bin/startup_script.sh
 ADD init_cassandra.cql /home/guest/init_cassandra.cql
 RUN chown guest:guest init_cassandra.cql
 
-#Add notebooks
-ADD notebooks /home/guest/notebooks
-RUN chown -R guest:guest notebooks
+#Add batch application
+ADD Batch /home/guest/Batch
+RUN chown -R guest:guest Batch
 
-
-
+#Add Streaming application
+ADD Streaming /home/guest/Streaming
+RUN chown -R guest:guest Streaming

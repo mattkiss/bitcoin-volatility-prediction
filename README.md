@@ -12,7 +12,7 @@ It additionnally installs
 * Jupyter notebook for Python 
 
 
-# Quick start-up guide (Image not yet available, use the "Build and running the container from scratch" section)
+# Quick start-up guide
 
 Run container using [DockerHub image](https://hub.docker.com/r/mattkiss/bitcoin-volatility-prediction)
 
@@ -71,13 +71,17 @@ notebook
 
 and connect from your browser at port host:8888 (where 'host' is the IP for your host. If run locally on your computer, this should be 127.0.0.1 or 192.168.99.100, check Docker documentation)
 
+#### Start the batch application
+
+Open Batch/batch.ipynb and run all cells.
+
 #### Start Kafka producer
 
-Open send.ipynb and run all cells.
+Open Streaming/send.ipynb and run all cells.
 
 #### Start Kafka receiver
 
-Open receive.ipynb and run cells up to start streaming.
+Open Streaming/receive.ipynb and run cells up to start streaming.
 
 #### Connect to Spark UI
 
